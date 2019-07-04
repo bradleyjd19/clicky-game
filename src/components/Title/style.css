@@ -1,0 +1,18 @@
+#titleContainer {
+  width: 100%;
+  background-image: url("https://merrimacknewspaper.com/wp-content/uploads/2018/11/letterkennylogo_logo_24_rgb.jpg");
+}
+
+#titleName,
+#titleInstructions {
+  text-align: center;
+  color: white;
+}
+
+#titleName {
+  padding-top: 7rem;
+}
+
+#titleInstructions {
+  padding-bottom: 5rem;
+}

@@ -1,0 +1,24 @@
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background-image: url("http://cdn.shopify.com/s/files/1/0941/7790/products/Salvaged-Barnwood6Row_grande.jpg?v=1551138538");
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: bold;
+  color: white;
+  padding-left: 30px;
+}
+
+#guessStatus,
+#currentScore,
+#divider,
+#topScore {
+  float: right;
+  padding-right: 15px;
+}
+
+
