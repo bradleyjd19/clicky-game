@@ -5,8 +5,9 @@ function Title() {
   return (
     <div>
       <div id="titleContainer">
-        <h1 id="titleName">The Letterkenny Click Game</h1>
-        <h4 id="titleInstructions">Click on the pictures below to earn a point, but click each one only once or it's game over!</h4>
+        <h1 id="titleName">There are 12 picture cards in Letterkenny.</h1>
+        <h2 id="titleTagline">These are their problems.</h2>
+        <h4 id="titleInstructions">You were trying to click each picture just once the other day...</h4>
       </div >
     </div >
   )

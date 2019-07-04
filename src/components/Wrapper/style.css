@@ -1,4 +1,13 @@
+#wrapperContainer {
+  background-image: url("https://github.com/bradleyjd19/Friend-Finder/blob/master/assets/images/lk-bg.jpg?raw=true");
+  background-position: center;
+  background-size: cover;
+}
+
 .wrapper {
   max-width: 70%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

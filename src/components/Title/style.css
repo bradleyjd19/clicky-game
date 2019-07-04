@@ -4,6 +4,7 @@
 }
 
 #titleName,
+#titleTagline,
 #titleInstructions {
   text-align: center;
   color: white;
@@ -11,8 +12,10 @@
 
 #titleName {
   padding-top: 7rem;
+  font-size: 55px;
 }
 
 #titleInstructions {
-  padding-bottom: 5rem;
+  padding-top: 7rem;
+  padding-bottom: 6rem;
 }

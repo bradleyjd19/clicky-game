@@ -9,13 +9,34 @@ import characters from "./letterkenny.json"
 class App extends Component {
 
   state = {
-    characters
+    characters,
+    currentScore: 0,
+    topScore: 0,
+    message: ""
+  };
+
+  // shuffleArray = (array) => {
+  //   for (let i = array.length - 1; i > 0; i--) {
+  //     let j = Math.floor(Math.random() * (i + 1));
+  //     [array[i], array[j]] = [array[j], array[i]];
+  //   }
+  // }
+
+  handleScore = () => {
+    this.setState({ currentScore: this.state.currentScore + 1 });
+  };
+
+  handleTopScore = () => {
+    this.setState({ topScore: this.state.topScore + 1 });
   };
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar
+          currentScore={this.state.currentScore}
+          topScore={this.state.topScore}
+        />
         <Title />
         <Wrapper>
           {this.state.characters.map(character => (
