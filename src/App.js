@@ -15,12 +15,28 @@ class App extends Component {
     message: ""
   };
 
-  // shuffleArray = (array) => {
-  //   for (let i = array.length - 1; i > 0; i--) {
-  //     let j = Math.floor(Math.random() * (i + 1));
-  //     [array[i], array[j]] = [array[j], array[i]];
-  //   }
-  // }
+  handleClick = id => {
+    const characterClicked = this.state.characters.filter(card => card.id === id);
+    if (!characterClicked[0].isClicked) {
+      characterClicked[0].isClicked = true;
+      this.handleScore();
+      if (this.state.currentScore >= this.state.topScore) {
+        this.handleTopScore();
+        this.handleShuffle(characters);
+      }
+      this.setState({
+        characters,
+        message: "Can Cofirm"
+      });
+    } else {
+        this.handleReset();
+        this.setState({
+          characters,
+          message: "Hard No",
+          currentScore: 0
+        });
+    }
+  }
 
   handleScore = () => {
     this.setState({ currentScore: this.state.currentScore + 1 });
@@ -30,10 +46,24 @@ class App extends Component {
     this.setState({ topScore: this.state.topScore + 1 });
   };
 
+  handleShuffle = characters => {
+    characters.sort((a, b) => {
+      return 0.5 - Math.random();
+    });
+  };
+
+  handleReset = () => {
+    for (let i = 0; i < characters.length; i++) {
+      this.state.characters[i].isClicked = false;
+    }
+    this.handleShuffle(characters);
+  }
+
   render() {
     return (
       <div>
         <Navbar
+          message={this.state.message}
           currentScore={this.state.currentScore}
           topScore={this.state.topScore}
         />
@@ -41,8 +71,12 @@ class App extends Component {
         <Wrapper>
           {this.state.characters.map(character => (
             <CharacterCard
+              id={character.id}
+              key={character.id}
               image={character.image}
               name={character.name}
+              isClicked={character.isClicked}
+              handleClick={this.handleClick}
             />
           ))}
         </Wrapper>

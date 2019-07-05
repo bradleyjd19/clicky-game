@@ -2,6 +2,7 @@
   background-image: url("https://github.com/bradleyjd19/Friend-Finder/blob/master/assets/images/lk-bg.jpg?raw=true");
   background-position: center;
   background-size: cover;
+  margin-top: -1rem;
 }
 
 .wrapper {

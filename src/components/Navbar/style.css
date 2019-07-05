@@ -5,6 +5,7 @@
   z-index: 99;
   width: 100%;
   background-color: rgb(14, 27, 148);
+  text-align: center;
   height: 75px;
   font-size: 18px;
   line-height: 75px;
@@ -13,12 +14,13 @@
   padding-left: 30px;
 }
 
-#guessStatus,
+#gameTitle {
+  float: left;
+}
+
 #currentScore,
 #divider,
 #topScore {
   float: right;
   padding-right: 15px;
 }
-
-
