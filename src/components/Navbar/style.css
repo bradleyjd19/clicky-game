@@ -6,25 +6,53 @@
   width: 100%;
   background-color: rgb(14, 27, 148);
   text-align: center;
-  height: 75px;
-  font-size: 18px;
-  line-height: 75px;
+  height: 4.6875rem;
+  font-size: 1.125rem;
+  line-height: 4.6875rem;
   font-weight: bold;
   color: white;
-  padding-left: 30px;
+  padding-left: 1.875rem;
 }
 
 #gameTitle {
   float: left;
 }
 
-#currentScore,
-#divider,
-#topScore {
+#scoreDiv {
   float: right;
-  padding-right: 15px;
+  padding-right: 1rem;
+}
+
+#currentScore {
+  padding-right: 1rem;
+}
+
+#topScore {
+  padding-left: 1rem;
 }
 
 #message {
   font-size: 1.75rem;
+}
+
+@media screen and (max-width: 980px) {
+
+  #navbar {
+    position: static;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  #gameTitle,
+  #message,
+  #scoreDiv {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
 }
