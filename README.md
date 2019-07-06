@@ -14,3 +14,6 @@ A demo of this application can be found on Heroku at https://letterkennyclick.he
 ## Resources
 
 This project was created with React utilizing the create-react-app npm package
+
+## Disclaimer
+This application is in no way associated with Letterkenny and is for entertainment and educational purposes only.
