@@ -20,30 +20,44 @@ class App extends Component {
     if (!characterClicked[0].isClicked) {
       characterClicked[0].isClicked = true;
       this.handleScore();
+      this.messageColor("white");
+      this.handleRightClick();
+    } else {
+      this.handleReset();
+      this.messageColor("red");
+      this.setState({
+        characters,
+        message: "Hard No! Figure It Out.",
+        currentScore: 0
+      });
+    }
+  }
+
+  handleRightClick = () => {
+    if (this.state.currentScore === 11) {
+      this.handleWin();
+    } else {
+      this.handleShuffle(characters);
       if (this.state.currentScore >= this.state.topScore) {
         this.handleTopScore();
-        this.handleShuffle(characters);
       }
       this.setState({
         characters,
-        message: "Can Cofirm"
-      });
-    } else {
-        this.handleReset();
-        this.setState({
-          characters,
-          message: "Hard No",
-          currentScore: 0
-        });
+        message: "That's A Texas-Sized 10-4"
+      })
     }
   }
 
   handleScore = () => {
-    this.setState({ currentScore: this.state.currentScore + 1 });
+    this.setState({
+      currentScore: this.state.currentScore + 1
+    });
   };
 
   handleTopScore = () => {
-    this.setState({ topScore: this.state.topScore + 1 });
+    this.setState({
+      topScore: this.state.topScore + 1
+    });
   };
 
   handleShuffle = characters => {
@@ -51,6 +65,20 @@ class App extends Component {
       return 0.5 - Math.random();
     });
   };
+
+  handleWin = () => {
+    this.handleReset();
+    this.setState({
+      characters,
+      currentScore: 0,
+      topScore: 12,
+      message: "WHEEL SNIPE CELLY BOYS!"
+    })
+  }
+
+  messageColor = (fontColor) => {
+    document.getElementById("message").style.color = fontColor;
+  }
 
   handleReset = () => {
     for (let i = 0; i < characters.length; i++) {

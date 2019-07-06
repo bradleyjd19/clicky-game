@@ -24,3 +24,7 @@
   float: right;
   padding-right: 15px;
 }
+
+#message {
+  font-size: 1.75rem;
+}
